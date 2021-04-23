@@ -24,7 +24,8 @@ Introduccion  a la Fisica de Particulas
 import matplotlib.pyplot as plt
 import os
 import pathlib
-
+from scipy.optimize import curve_fit
+import numpy as np
 #===============================================================
 #DECLARACION DE VARIABLES
 """
@@ -113,15 +114,12 @@ plt.plot(bins,n)
 # se imprimen en archivos los datos para poder realizar la regresión exponencial en Excel
 f1 = open("bins.txt", "w")
 for i in range(0,len(bins),1) :
-    f1.write(str(bins[i])+ os.linesep)
+    f1.write(str(bins[i])+ "\n")
     
 f2 = open("n.txt", "w")
 for i in range(0,len(n),1) :
-    f2.write(str(n[i])+ os.linesep)
+    f2.write(str(n[i])+ "\n")
+
 #===============================================================
 
-#GRAFICAR
-        
-#plt.hist(tiempos, bins=1000,log=False)                     #se grafica el histograma de cargas integradas
-#print("Datos totales: ",len(archivo))                                                 #para verificar la cantidad de datos registrados
         
